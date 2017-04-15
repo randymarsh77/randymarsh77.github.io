@@ -10,7 +10,7 @@ const CardData = {
 		},
 		{
 			title: 'Crystal',
-			description: 'Sychronized, wireless audio. The audio "engine" that backs Amethyst\'s content streaming.',
+			description: 'Synchronized, wireless audio. The audio "engine" that backs Amethyst\'s content streaming.',
 			projectUri: 'https://github.com/randymarsh77/crystal',
 		},
 		{
@@ -20,7 +20,7 @@ const CardData = {
 		},
 		{
 			title: 'BugFlow',
-			description: 'FogBugz case integration in FlowDock. Project is dead; we now use Jira. Replaces FB case urls with inline case information in FlowDock flows. Supports authentication and custom FogBugz deployments.',
+			description: 'FogBugz case integration in FlowDock. Project is dead; we now use Jira. Chrome extenstion that replaces FB case urls with inline case information in FlowDock flows. Supports authentication and custom FogBugz deployments.',
 			projectUri: 'https://randymarsh77.github.io/bugflow',
 		},
 	],
