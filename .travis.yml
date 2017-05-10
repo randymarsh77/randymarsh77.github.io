@@ -9,7 +9,8 @@ before_script:
 scripts:
   - yarn build
 
-after_success:
-  - yarn deploy
-  on:
-    branch: stable
+deploy:
+  - provider: script
+      script: yarn deploy
+      on:
+        branch: stable
