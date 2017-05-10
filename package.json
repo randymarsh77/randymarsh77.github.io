@@ -7,7 +7,8 @@
     "lint": "eslint --ext=js --ext jsx src",
     "build": "rimraf dist && yarn lint && webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --watch-content-base --content-base dist/"
+    "start": "webpack-dev-server --watch-content-base --content-base dist/",
+    "deploy": "babel-node --presets es2017 scripts/deploy.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,12 @@
   },
   "homepage": "https://github.com/randymarsh77/randymarsh77.github.io#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "css-loader": "^0.28.0",

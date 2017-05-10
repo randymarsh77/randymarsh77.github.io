@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "6"
+
+before_script:
+  - npm install -g yarn
+  - yarn install
+
+scripts:
+  - yarn build
+
+after_success:
+  - yarn deploy
+  on:
+    branch: stable
