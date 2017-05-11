@@ -24,18 +24,12 @@ const [owner, repo] = process.env.TRAVIS_REPO_SLUG.split('/');
 
 	// copy dist into the result, overwriting everything
 	console.log('  Copying files...\n');
-	await execAsync(`cp -r dist/ ${repo}/`);
-
-	console.log('debug log');
-	await execAsync('ls -la', { cwd: repo });
-	await execAsync('git status', { cwd: repo });
+	await execAsync(`cp -a dist/. ${repo}/`);
 
 	// push it up
 	console.log('  Pushing...\n');
 	await execAsync('git add *', { cwd: repo });
-	await execAsync('git status', { cwd: repo });
 	await execAsync('git commit -m "Deploying, :fingers-crossed:"', { cwd: repo });
-	await execAsync('git push origin master', { cwd: repo });
 
 	console.log('Finished!');
 })();
