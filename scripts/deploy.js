@@ -18,7 +18,7 @@ const [owner, repo] = process.env.TRAVIS_REPO_SLUG.split('/');
 
 	// clone master branch
 	console.log('  Cloning...\n');
-	await execAsync(`git clone https://github.com/${owner}/${repo}`);
+	await execAsync(`git clone https://github.com/${owner}/${repo}.git`);
 
 	// copy dist into the result, overwriting everything
 	console.log('  Copying files...\n');
