@@ -2,10 +2,12 @@ import { exec } from 'child_process';
 
 function execAsync(command, options) {
 	const promise = new Promise((resolve, reject) => {
-		exec(`${command}`, options, (error, stdout, stderr) => {
+		const proc = exec(`${command}`, options, (error, stdout, stderr) => {
 			if (error) reject(stderr);
 			resolve(stdout);
 		});
+		proc.stdout.pipe(process.stdout);
+		proc.stderr.pipe(process.stderr);
 	});
 	return promise;
 }
