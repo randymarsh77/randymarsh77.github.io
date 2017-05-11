@@ -29,6 +29,8 @@ const [owner, repo] = process.env.TRAVIS_REPO_SLUG.split('/');
 	// push it up
 	console.log('  Pushing...\n');
 	await execAsync('git add *', { cwd: repo });
+	await execAsync(`git config user.email ${process.env.GitHubEmail}`, { cwd: repo });
+	await execAsync(`git config user.name ${process.env.GitHubName}`, { cwd: repo });
 	await execAsync('git commit -m "Deploying, :fingers-crossed:"', { cwd: repo });
 
 	console.log('Finished!');
